@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WDD 231: Web Frontend Development II</title>
+    <meta name="author" content="David Esparza">
+    <meta name="description" content="Course home page for WDD 231: Web Frontend Development II">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/index.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <h1>WDD 231: Web Frontend Development II</h1>
+    </header>
+    <nav>
+        <button id="hamburger" aria-label="Toggle menu">☰</button>
+        <ul id="nav-menu">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Chamber</a></li>
+            <li><a href="https://github.com/desparzas" target="_blank">GitHub Profile</a></li>
+            <li><a href="https://www.linkedin.com/in/desparzas" target="_blank">LinkedIn</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Course Information</h2>
+            <p>Welcome to WDD 231: Web Frontend Development II. This course will build upon your existing web development skills and introduce you to advanced concepts in frontend development.</p>
+        </section>
+        <section>
+            <h2>Learning Activities</h2>
+            <p>Throughout this course, you will engage in various learning activities including coding exercises, project work, and collaborative assignments. These activities are designed to reinforce your understanding of key concepts and improve your practical skills.</p>
+        </section>
+        <section id="certificate-courses">
+            <h2>Certificate Courses</h2>
+            <div id="filter-buttons">
+                <button data-filter="all">All Courses</button>
+                <button data-filter="WDD">WDD Courses</button>
+                <button data-filter="CSE">CSE Courses</button>
+            </div>
+            <div id="course-grid"></div>
+            <p id="total-credits"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌟 David Esparza Sánchez 🌟 Peru</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>

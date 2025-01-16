@@ -1,0 +1,128 @@
+:root {
+    --primary-color: #1b4965;
+    --secondary-color: #62b6cb;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --header-bg: #1b4965;
+    --card-bg: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--card-bg);
+    text-align: center;
+    padding: 1rem;
+}
+
+nav {
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+}
+
+#hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--card-bg);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#nav-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+#nav-menu li a {
+    color: var(--card-bg);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+#nav-menu li a:hover, #nav-menu li a.active {
+    background-color: var(--secondary-color);
+}
+
+main {
+    margin: 2rem auto;
+    padding: 0 1rem;
+    max-width: 1000px;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+#filter-buttons {
+    margin-bottom: 1rem;
+}
+
+#filter-buttons button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--card-bg);
+    border: none;
+    cursor: pointer;
+}
+
+#course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.course-card {
+    border: 1px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.course-card.completed {
+    background-color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--card-bg);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    #hamburger {
+        display: block;
+    }
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    #nav-menu.open {
+        display: flex;
+    }
+
+    #nav-menu li {
+        margin: 0.5rem 0;
+    }
+}
