@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Restaurante El Mochica",
+    "address": "Av. Los Incas 123, Trujillo, La Libertad",
+    "phone": "(044) 123-4567",
+    "image": "restaurante-el-mochica.jpeg",
+    "membershipLevel": 3
+  },
+  {
+    "name": "Ferretería La Libertad",
+    "address": "Jr. Pizarro 456, Trujillo, La Libertad",
+    "phone": "(044) 234-5678",
+    "image": "ferreteria-la-libertad.jpeg",
+    "membershipLevel": 2
+  },
+  {
+    "name": "Agroexportadora Trujillo S.A.C.",
+    "address": "Calle Las Hortensias 789, Trujillo, La Libertad",
+    "phone": "(044) 345-6789",
+    "image": "agroexportadora-trujillo.jpg",
+    "membershipLevel": 1
+  },
+  {
+    "name": "Boticas Perú",
+    "address": "Av. España 321, Trujillo, La Libertad",
+    "phone": "(044) 456-7890",
+    "image": "logoBoticasPeru.png",
+    "membershipLevel": 2
+  },
+  {
+    "name": "Cafetería El Valle",
+    "address": "Jr. Independencia 654, Trujillo, La Libertad",
+    "phone": "(044) 567-8901",
+    "image": "elvalle.jpeg",
+    "membershipLevel": 3
+  },
+  {
+    "name": "Hotel Trujillo Suites",
+    "address": "Av. Larco 1234, Trujillo, La Libertad",
+    "phone": "(044) 678-9012",
+    "image": "trujillo-suites.jpg",
+    "membershipLevel": 3
+  },
+  {
+    "name": "Pastelería Dulce Trujillo",
+    "address": "Calle Grau 890, Trujillo, La Libertad",
+    "phone": "(044) 789-0123",
+    "image": "dulcinelly.jpeg",
+    "membershipLevel": 2
+  }
+]

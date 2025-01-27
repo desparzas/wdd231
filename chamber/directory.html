@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber Directory - David Esparza</title>
+    <meta name="author" content="David Esparza">
+    <meta name="description" content="Course home page for WDD 231: Web Frontend Development II">
+    <meta property="og:title" content="Chamber Directory - David Esparza">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="../js/date.js" defer></script>
+    
+</head>
+<body>
+    <header>
+        <h1>WDD 231: Web Frontend Development II</h1>
+    </header>
+    <nav>
+        <button id="hamburger" aria-label="Toggle menu">☰</button>
+        <ul id="nav-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./directory.html" class="active">Chamber</a></li>
+            <li><a href="https://github.com/desparzas" target="_blank">GitHub Profile</a></li>
+            <li><a href="https://www.linkedin.com/in/desparzas" target="_blank">LinkedIn</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Member Directory</h2>
+        <div id="view-toggle">
+            <button id="grid-view">Grid View</button>
+            <button id="list-view">List View</button>
+        </div>
+        <div id="directory-container"></div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌟 David Esparza Sánchez 🌟 Peru</p>
+        <p id="lastModified"></p>
+    </footer>
+    <script src="js/index.js" defer></script>
+</body>
+</html>
