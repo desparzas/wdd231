@@ -13,7 +13,7 @@ function getWeather() {
         return;
     }
 
-    fetch("http://dataservice.accuweather.com/forecasts/v1/daily/5day/258353?apikey=ySA0Wo71icFfOc5g7CvvsGbCRXDEg0H0&language=en-us")
+    fetch("https://dataservice.accuweather.com/forecasts/v1/daily/5day/258353?apikey=ySA0Wo71icFfOc5g7CvvsGbCRXDEg0H0&language=en-us")
         .then(response => response.json())
         .then(data => {
             localStorage.setItem('weatherData', JSON.stringify(data));
