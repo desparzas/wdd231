@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Chamber Of Commerce</title>
+    <meta name="description" content="Thank you for submitting your membership application">
+    <meta name="author" content="David Esparza">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/thankyou.css">
+    <script src="../js/date.js" defer></script>
+    <script src="./js/thankyou.js" defer></script>
+    <script src="./js/hamburguer.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <div class="logo"><h1>Thank you</h1></div>
+        <nav>
+            <button id="hamburger" aria-label="Toggle menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./directory.html">Directory</a></li>
+                <li><a href="join.html">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Thank You for Your Application</h1>
+        <p>We appreciate your interest in joining our Chamber of Commerce. Here's a summary of the information you submitted:</p>
+        
+        <div id="submission-summary">
+            <!-- JavaScript will populate this div with the form data -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌟 David Esparza Sánchez 🌟 Peru</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script>
+        // Parse URL parameters and display form data
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const summaryDiv = document.getElementById('submission-summary');
+            
+            const requiredFields = ['firstname', 'lastname', 'email', 'phone', 'organization', 'timestamp'];
+            let summary = '<h2>Submission Details:</h2><ul>';
+            
+            requiredFields.forEach(field => {
+                if (params.has(field)) {
+                    let value = params.get(field);
+                    if (field === 'timestamp') {
+                        value = new Date(value).toLocaleString();
+                    }
+                    summary += `<li><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${value}</li>`;
+                }
+            });
+            
+            summary += '</ul>';
+            summaryDiv.innerHTML = summary;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Chamber Of Commerce</title>
+    <meta name="description" content="Join Chamber Of Commerce">
+    <meta name="author" content="David Esparza">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/join.css">
+
+    <script src="../js/date.js" defer></script>
+    <script src="./js/join.js" defer></script>
+    <script src="./js/hamburguer.js" defer></script>
+
+
+
+
+</head>
+<body>
+    <header>
+        <div class="logo"><h1>Chamber Membership Application</h1></div>
+        <nav>
+            <button id="hamburger" aria-label="Toggle menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./directory.html">Directory</a></li>
+                <li><a href="join.html">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+        
+        <form method="get" action="thankyou.html">
+            <label>
+                First Name:
+                <input type="text" name="firstname" required 
+                       title="Please enter your first name" 
+                       autocomplete="given-name">
+            </label>
+
+            <label>
+                Last Name:
+                <input type="text" name="lastname" required 
+                       title="Please enter your last name" 
+                       autocomplete="family-name">
+            </label>
+
+            <label>
+                Title:
+                <input type="text" name="title" 
+                       title="Please enter your position title" 
+                       autocomplete="organization-title"
+                       pattern="[A-Za-z\s-]{7,}"
+                       placeholder="Minimum 7 characters, letters, hyphens, and spaces only">
+            </label>
+
+            <label>
+                Email:
+                <input type="email" name="email" required 
+                       title="Please enter your email" 
+                       autocomplete="email"
+                       placeholder="example@domain.com">
+            </label>
+
+            <label>
+                Mobile Phone:
+                <input type="tel" name="phone" required 
+                       title="Please enter your mobile number" 
+                       autocomplete="tel">
+            </label>
+
+            <label>
+                Business/Organization Name:
+                <input type="text" name="organization" required 
+                       title="Please enter your business name" 
+                       autocomplete="organization">
+            </label>
+
+            <fieldset>
+                <legend>Membership Level</legend>
+                <label>
+                    <input type="radio" name="membership" value="np">
+                    Non-Profit Membership
+                </label>
+                <label>
+                    <input type="radio" name="membership" value="bronze">
+                    Bronze Membership
+                </label>
+                <label>
+                    <input type="radio" name="membership" value="silver">
+                    Silver Membership
+                </label>
+                <label>
+                    <input type="radio" name="membership" value="gold">
+                    Gold Membership
+                </label>
+            </fieldset>
+
+            <label>
+                Business Description:
+                <textarea name="description" title="Please describe your business"></textarea>
+            </label>
+
+            <input type="hidden" name="timestamp" id="timestamp">
+
+            <input type="submit" value="Submit Application">
+        </form>
+
+        <section class="membership-cards">
+            <div class="card np">
+                <h2>Non-Profit</h2>
+                <p>For non-profit organizations</p>
+                <p>No fee</p>
+                <button onclick="showModal('np-modal')">Learn More</button>
+            </div>
+
+            <div class="card bronze">
+                <h2>Bronze</h2>
+                <p>Basic membership level</p>
+                <button onclick="showModal('bronze-modal')">Learn More</button>
+            </div>
+
+            <div class="card silver">
+                <h2>Silver</h2>
+                <p>Enhanced membership benefits</p>
+                <button onclick="showModal('silver-modal')">Learn More</button>
+            </div>
+
+            <div class="card gold">
+                <h2>Gold</h2>
+                <p>Premium membership level</p>
+                <button onclick="showModal('gold-modal')">Learn More</button>
+            </div>
+        </section>
+
+        <!-- Modals -->
+        <div id="np-modal" class="modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Non-Profit Membership Benefits</h2>
+            <ul>
+                <li>Basic directory listing</li>
+                <li>Access to networking events</li>
+                <li>Monthly newsletter subscription</li>
+                <li>Community outreach opportunities</li>
+            </ul>
+            </div>
+        </div>
+
+        <div id="bronze-modal" class="modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Bronze Membership Benefits</h2>
+            <ul>
+                <li>Enhanced directory listing</li>
+                <li>Social media promotion (quarterly)</li>
+                <li>Access to business workshops</li>
+                <li>Member-to-member discounts</li>
+                <li>Annual fee: $300</li>
+            </ul>
+            </div>
+        </div>
+
+        <div id="silver-modal" class="modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Silver Membership Benefits</h2>
+            <ul>
+                <li>All Bronze benefits</li>
+                <li>Featured business spotlight</li>
+                <li>Monthly social media promotion</li>
+                <li>Access to exclusive events</li>
+                <li>Advertising discounts</li>
+                <li>Annual fee: $600</li>
+            </ul>
+            </div>
+        </div>
+
+        <div id="gold-modal" class="modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Gold Membership Benefits</h2>
+            <ul>
+                <li>All Silver benefits</li>
+                <li>Priority business spotlight</li>
+                <li>Weekly social media promotion</li>
+                <li>VIP event access</li>
+                <li>Direct referral program</li>
+                <li>Dedicated account manager</li>
+                <li>Annual fee: $1200</li>
+            </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌟 David Esparza Sánchez 🌟 Peru</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script>
+        // Set timestamp when form loads
+        document.getElementById('timestamp').value = new Date().toISOString();
+
+        // Modal functionality
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        // Close modals when clicking the X
+        document.querySelectorAll('.close').forEach(closeBtn => {
+            closeBtn.onclick = function() {
+                this.parentElement.parentElement.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

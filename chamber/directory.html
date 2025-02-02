@@ -18,21 +18,21 @@
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <script src="../js/date.js" defer></script>
+    <script src="./js/hamburguer.js" defer></script>
     
 </head>
 <body>
     <header>
-        <h1>WDD 231: Web Frontend Development II</h1>
+        <div class="logo"><h1>Chamber Membership Application</h1></div>
+        <nav>
+            <button id="hamburger" aria-label="Toggle menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./directory.html">Directory</a></li>
+                <li><a href="join.html">Join Us</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <button id="hamburger" aria-label="Toggle menu">☰</button>
-        <ul id="nav-menu">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./directory.html" class="active">Chamber</a></li>
-            <li><a href="https://github.com/desparzas" target="_blank">GitHub Profile</a></li>
-            <li><a href="https://www.linkedin.com/in/desparzas" target="_blank">LinkedIn</a></li>
-        </ul>
-    </nav>
 
     <main>
         <h2>Member Directory</h2>
