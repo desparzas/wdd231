@@ -3,66 +3,53 @@
 // funcion para obtener el clima
 
 function getWeather() {
-    const cachedWeather = localStorage.getItem('weatherData');
-    if (cachedWeather) {
-        console.log('Using cached weather data:', JSON.parse(cachedWeather));
-        // limpiar el cache cada 5 minutos
-        // setTimeout(() => {
-        //     localStorage.removeItem('weatherData');
-        // }, 1000 * 60 * 5);
-        return;
-    }
-
-    fetch("https://dataservice.accuweather.com/forecasts/v1/daily/5day/258353?apikey=ySA0Wo71icFfOc5g7CvvsGbCRXDEg0H0&language=en-us")
-        .then(response => response.json())
-        .then(data => {
-            localStorage.setItem('weatherData', JSON.stringify(data));
-            console.log('Fetched new weather data:', data);
-        })
-        .catch(error => console.error(error));
+  fetch("https://dataservice.accuweather.com/forecasts/v1/daily/5day/258353?apikey=ySA0Wo71icFfOc5g7CvvsGbCRXDEg0H0&language=en-us")
+    .then(response => response.json())
+    .then(data => {
+      console.log('Fetched weather data:', data);
+      fillWeather(data);
+    })
+    .catch(error => console.error(error));
 }
 
-function fillWeather() {
-    const weatherData = JSON.parse(localStorage.getItem('weatherData'));
-    if (!weatherData) {
-        console.error('No weather data available');
-        return;
-    }
+function fillWeather(weatherData) {
+  if (!weatherData) {
+    console.error('No weather data available');
+    return;
+  }
 
-    console.log('Filling weather data:', weatherData);
-    const currentWeather = weatherData.Headline.Text.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    const currentTemperature = Math.round(weatherData.DailyForecasts[0].Temperature.Maximum.Value);
-    const forecast = weatherData.DailyForecasts;
+  console.log('Filling weather data:', weatherData);
+  const currentWeather = weatherData.Headline.Text.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  const currentTemperature = Math.round(weatherData.DailyForecasts[0].Temperature.Maximum.Value);
+  const forecast = weatherData.DailyForecasts;
 
-    const weatherSection = document.querySelector('#weather');
-    weatherSection.innerHTML = `
-        <h2>Weather</h2>
-        <p>Current temperature: ${currentTemperature}°F</p>
-        <p>Current weather: ${currentWeather}</p>
-        <h3>5-day forecast</h3>
-        <ul class="forecast">
-            ${forecast.map(day => {
-                const date = new Date(day.Date);
-                const options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
-                const formattedDate = date.toLocaleDateString('en-US', options);
-                const maxTemp = Math.round(day.Temperature.Maximum.Value);
-                const minTemp = Math.round(day.Temperature.Minimum.Value);
-                const dayWeather = day.Day.IconPhrase.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-                const nightWeather = day.Night.IconPhrase.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-                return `
-                    <li>
-                        <strong>${formattedDate}</strong>
-                        <p>Day: ${dayWeather}</p>
-                        <p>Night: ${nightWeather}</p>
-                        <p>Max: ${maxTemp}°F</p>
-                        <p>Min: ${minTemp}°F</p>
-                    </li>
-                `;
-            }).join('')}
-        </ul>
-    `;
-
-    console.log('Filled weather data:', weatherData);
+  const weatherSection = document.querySelector('#weather');
+  weatherSection.innerHTML = `
+    <h2>Weather</h2>
+    <p>Current temperature: ${currentTemperature}°F</p>
+    <p>Current weather: ${currentWeather}</p>
+    <h3>5-day forecast</h3>
+    <ul class="forecast">
+      ${forecast.map(day => {
+        const date = new Date(day.Date);
+        const options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
+        const formattedDate = date.toLocaleDateString('en-US', options);
+        const maxTemp = Math.round(day.Temperature.Maximum.Value);
+        const minTemp = Math.round(day.Temperature.Minimum.Value);
+        const dayWeather = day.Day.IconPhrase.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        const nightWeather = day.Night.IconPhrase.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        return `
+          <li>
+            <strong>${formattedDate}</strong>
+            <p>Day: ${dayWeather}</p>
+            <p>Night: ${nightWeather}</p>
+            <p>Max: ${maxTemp}°F</p>
+            <p>Min: ${minTemp}°F</p>
+          </li>
+        `;
+      }).join('')}
+    </ul>
+  `;
 }
 
 function getMembershipLevel(level) {
