@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trujillo Chamber - Home</title>
+    <meta name="description" content="Welcome to Trujillo Chamber - Promoting local business and community growth">
+    <meta name="author" content="David Esparza">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="../js/date.js" defer></script>
+    <script src="./js/weather.js" defer></script>
+    <script src="./js/nav.js" defer></script>
+
+
+</head>
+<body>
+    <header>
+        <div class="logo">Trujillo Chamber</div>
+        <nav>
+            <button id="hamburger" aria-label="Toggle menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#spotlights">Spotlights</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#weather">Weather</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="hero">
+            <img src="images/hero-image.jpg" alt="Your City Skyline" class="hero-image">
+            <h2>Welcome to Trujillo Chamber</h2>
+            <a href="#" class="cta-button">Join the Chamber</a>
+        </section>
+
+        <section id="spotlights">
+            <h2>Member Spotlights</h2>
+            <div id="spotlight-container"></div>
+        </section>
+
+        <section id="events">
+            <h2>Current Events</h2>
+            <div id="event-container">
+                <div class="event">
+                    <h3>Business Connection</h3>
+                    <p>THE BEST OPPORTUNITY TO EXPAND YOUR NETWORK OF CONTACTS</p>
+                    <p>22-02-2025</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="weather">
+            <h2>Local Weather</h2>
+            <div id="weather-info"></div>
+            <div id="weather-forecast"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌟 David Esparza Sánchez 🌟 Peru</p>
+        <p id="lastModified"></p>
+    </footer>
+
+
+</body>
+</html>
+

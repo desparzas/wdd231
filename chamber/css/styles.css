@@ -66,8 +66,151 @@ main {
   border-radius: 5px;
 }
 
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  list-style: none;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+#hero{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-button {
+  padding: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: var(--card-bg);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-color);
+}
+
+#spotlight-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+#event-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
 @media (max-width: 600px) {
   #directory-container {
     grid-template-columns: 1fr;
   }
 }
+
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: var(--header-bg);
+  color: var(--card-bg);
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+}
+
+.nav-menu li {
+  margin-left: 20px;
+}
+
+.nav-menu a {
+  color: var(--card-bg);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.logo{
+  display: block;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: var(--card-bg);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: var(--header-bg);
+  }
+
+  .nav-menu li {
+      text-align: center;
+      margin: 10px 0;
+  }
+
+  .burger {
+      display: block;
+  }
+
+  .logo {
+    display: none;
+  }
+  
+
+
+}
+
+/* Wayfinding */
+.nav-menu a.active {
+  border-bottom: 2px solid var(--secondary-color);
+}
+
