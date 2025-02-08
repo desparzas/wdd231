@@ -1,0 +1,34 @@
+/* Medium screen styles */
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+    .discover-grid {
+      grid-template-areas:
+        "sidebar sidebar"
+        "card-container card-container";
+    }
+  
+    .sidebar {
+      grid-area: sidebar;
+    }
+  
+    .card-container {
+      grid-area: card-container;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    nav ul {
+      display: flex;
+    }
+  
+    nav ul li {
+      margin-right: 1rem;
+      margin-bottom: 0;
+    }
+  }
+  
+  

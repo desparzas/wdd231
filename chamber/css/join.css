@@ -114,7 +114,7 @@
   }
   
   .card button {
-    background-color: #2ecc71;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 10px 15px;
@@ -124,7 +124,7 @@
   }
   
   .card button:hover {
-    background-color: #27ae60;
+    background-color: var(--secondary-color);
   }
   
   /* Modal styles */
@@ -141,10 +141,10 @@
   }
   
   .modal-content {
-    background-color: #fefefe;
+    background-color: var(--card-bg);
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid var(--primary-color);
     width: 80%;
     max-width: 500px;
     border-radius: 8px;
@@ -156,7 +156,7 @@
   }
   
   .close {
-    color: #aaa;
+    color: var(--primary-color);
     float: right;
     font-size: 28px;
     font-weight: bold;
