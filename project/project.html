@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Vibes - Music Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">Sonic Vibes</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#playlists">Playlists</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="hero">
+            <h1>Sonic Vibes</h1>
+            <p>Discover new music, reviews, and industry news</p>
+        </section>
+
+        <div class="grid-container">
+            <section id="featured" class="content-section">
+                <!-- Featured Posts -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="icon">📰</i>
+                        <h2>Featured Posts</h2>
+                    </div>
+                    <div class="card-content" id="featured-posts">
+                        <!-- Posts will be added here via JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Latest Reviews -->
+                <div id="reviews" class="card">
+                    <div class="card-header">
+                        <i class="icon">🎵</i>
+                        <h2>Latest Reviews</h2>
+                    </div>
+                    <div class="card-content" id="latest-reviews">
+                        <!-- Reviews will be added here via JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Playlists Section -->
+            <section id="playlists" class="playlist-section">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="icon">▶️</i>
+                        <h2>Featured Playlists</h2>
+                    </div>
+                    <div class="card-content" id="playlists-content">
+                        <!-- Playlists will be added here via JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Form -->
+        <section id="contact" class="contact-section">
+            <div class="card">
+                <div class="card-header">
+                    <i class="icon">✉️</i>
+                    <h2>Contact Us</h2>
+                </div>
+                <div class="card-content">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Sonic Vibes. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#playlists">Playlists</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
