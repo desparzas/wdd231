@@ -486,8 +486,134 @@ function handleNavigation() {
 }
 
 // Inicializar el contenido cuando se carga la página
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return re.test(email)
+}
+
+function showMessage(message, isError = false) {
+  const existingMessage = document.querySelector(".message")
+  if (existingMessage) {
+    existingMessage.remove()
+  }
+
+  const messageDiv = document.createElement("div")
+  messageDiv.className = `message ${isError ? "error" : "success"}`
+  messageDiv.textContent = message
+
+  const form = document.getElementById("contact-form")
+  form.parentNode.insertBefore(messageDiv, form)
+
+  // Remover el mensaje después de 5 segundos
+  setTimeout(() => {
+    messageDiv.remove()
+  }, 5000)
+}
+
+function handleContactForm() {
+  const form = document.getElementById("contact-form")
+  if (!form) return
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault()
+
+    const name = document.getElementById("name").value.trim()
+    const email = document.getElementById("email").value.trim()
+    const message = document.getElementById("message").value.trim()
+
+    if (!name || !email || !message) {
+      showMessage("Please fill in all fields", true)
+      return
+    }
+
+    if (!validateEmail(email)) {
+      showMessage("Please enter a valid email address", true)
+      return
+    }
+
+    if (message.length < 10) {
+      showMessage("Message must be at least 10 characters long", true)
+      return
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]')
+    const originalButtonText = submitButton.textContent
+    submitButton.disabled = true
+    submitButton.textContent = "Sending..."
+
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1500))
+
+      showMessage("Thank you for your message! We'll get back to you soon.")
+
+      form.reset()
+    } catch (error) {
+      showMessage("There was an error sending your message. Please try again.", true)
+    } finally {
+      submitButton.disabled = false
+      submitButton.textContent = originalButtonText
+    }
+  })
+}
+
+const style = document.createElement("style")
+style.textContent = `
+    .message {
+        padding: 1rem;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    .message.success {
+        background-color: rgba(29, 185, 84, 0.1);
+        color: var(--spotify-green);
+        border: 1px solid var(--spotify-green);
+    }
+
+    .message.error {
+        background-color: rgba(255, 0, 0, 0.1);
+        color: #ff4444;
+        border: 1px solid #ff4444;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(-10px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .form-group {
+        position: relative;
+    }
+
+    .form-group input:invalid,
+    .form-group textarea:invalid {
+        border-color: #ff4444;
+    }
+
+    .form-group input:focus:invalid,
+    .form-group textarea:focus:invalid {
+        border-color: #ff4444;
+        box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1);
+    }
+
+    .submit-btn:disabled {
+        background-color: #666;
+        cursor: not-allowed;
+    }
+`
+document.head.appendChild(style)
+
+// Actualizar el event listener del DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
   handleNavigation()
+  handleContactForm()
 
   // Funcionalidad del menú hamburguesa
   const hamburger = document.querySelector(".hamburger")
@@ -510,54 +636,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navMenu.classList.remove("active")
   }
 })
-
-// Datos de ejemplo para los detalles
-const postDetails = {
-  id: 1,
-  title: "The Evolution of Electronic Music",
-  date: "Feb 19, 2024",
-  author: "Jane Doe",
-  content: `
-        <p>Electronic music has come a long way since its inception in the early 20th century. From the early experiments with synthesizers to the modern digital audio workstations, the journey has been nothing short of revolutionary.</p>
-        <p>In the 1960s and 1970s, pioneers like Karlheinz Stockhausen and Wendy Carlos pushed the boundaries of what was possible with electronic instruments. The introduction of the Moog synthesizer in 1964 marked a significant milestone, bringing electronic sounds into popular music.</p>
-        <p>The 1980s saw the rise of drum machines and samplers, leading to the birth of genres like house and techno. Artists like Kraftwerk and Depeche Mode became household names, showcasing the potential of electronic music in pop culture.</p>
-        <p>Today, electronic music encompasses a vast array of subgenres, from ambient and IDM to dubstep and EDM. The accessibility of music production software has democratized the creation process, allowing bedroom producers to compete with established studios.</p>
-        <p>As we look to the future, emerging technologies like AI and virtual reality promise to open up new frontiers in electronic music production and performance. The evolution continues, and the possibilities seem endless.</p>
-    `,
-}
-
-const reviewDetails = {
-  id: 1,
-  album: "Midnight Echoes",
-  artist: "The Crystal Waves",
-  releaseDate: "January 15, 2024",
-  rating: "4.5/5",
-  content: `
-        <p>The Crystal Waves' latest offering, "Midnight Echoes," is a mesmerizing journey through ambient soundscapes and pulsating rhythms. This album showcases the band's growth since their debut, pushing the boundaries of their signature ethereal sound.</p>
-        <p>Opening track "Starlight Serenade" sets the tone with its shimmering synths and hypnotic beats, immediately drawing the listener into a world of sonic wonder. The title track, "Midnight Echoes," is the album's centerpiece, a 10-minute epic that ebbs and flows like the tides of a cosmic ocean.</p>
-        <p>Vocalist Sarah Luna's ethereal voice weaves through the intricate layers of sound, adding a human touch to the otherwise otherworldly compositions. Standout tracks like "Neon Dreams" and "Quantum Lullaby" demonstrate the band's ability to create emotionally resonant music within the electronic genre.</p>
-        <p>While the album occasionally veers into overly familiar territory, particularly in tracks like "Digital Sunset," the overall experience is cohesive and immersive. The production is crisp and detailed, rewarding repeated listens with new discoveries.</p>
-        <p>"Midnight Echoes" cements The Crystal Waves' place as one of the most exciting acts in contemporary electronic music. It's a must-listen for fans of ambient and progressive electronic genres, offering a transcendent experience that lingers long after the final track fades out.</p>
-    `,
-}
-
-const playlistDetails = {
-  id: 1,
-  title: "Indie Discoveries",
-  curator: "DJ Wavelength",
-  description:
-    "Explore the best up-and-coming indie artists with this carefully curated playlist. From dreamy bedroom pop to energetic indie rock, these tracks showcase the diversity and creativity of the independent music scene.",
-  tracks: [
-    { title: "Daydream Melody", artist: "The Sunflower Collective", duration: "3:45" },
-    { title: "Neon Nights", artist: "Electric Dreams", duration: "4:12" },
-    { title: "Whispers in the Wind", artist: "Echo & the Soundwaves", duration: "3:58" },
-    { title: "Urban Jungle", artist: "The Concrete Poets", duration: "3:30" },
-    { title: "Stargazer's Lullaby", artist: "Cosmic Dreamers", duration: "5:02" },
-    { title: "Vintage Love", artist: "Retro Hearts", duration: "3:22" },
-    { title: "Digital Nomad", artist: "The Wandering Pixels", duration: "4:07" },
-    { title: "Midnight Carousel", artist: "Luna Park", duration: "3:51" },
-  ],
-}
 
 // Función para manejar la navegación
 function handleNavigation() {
@@ -629,7 +707,7 @@ function updateLinks() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+  if (window.location.pathname.endsWith("project.html") || window.location.pathname === "/") {
     renderFeaturedPosts()
     renderLatestReviews()
     renderPlaylists()

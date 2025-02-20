@@ -197,9 +197,9 @@ body {
 }
 
 /* Contact Form */
-.contact-form {
-  display: grid;
-  gap: 1rem;
+.form-group {
+  position: relative;
+  margin-bottom: 1rem;
 }
 
 .form-group input,
@@ -211,12 +211,25 @@ body {
   border-radius: 4px;
   color: var(--text-white);
   font-family: Arial, sans-serif;
+  transition: all 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--spotify-green);
+  box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.1);
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: #ff4444;
+}
+
+.form-group input:invalid:focus:not(:placeholder-shown),
+.form-group textarea:invalid:focus:not(:placeholder-shown) {
+  border-color: #ff4444;
+  box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1);
 }
 
 .submit-btn {
@@ -228,11 +241,55 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  width: 100%;
 }
 
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   background-color: #1ed760;
+  transform: translateY(-1px);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Message Styles */
+.message {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-family: "Montserrat", sans-serif;
+  animation: slideIn 0.3s ease-out;
+}
+
+.message.success {
+  background-color: rgba(29, 185, 84, 0.1);
+  color: var(--spotify-green);
+  border: 1px solid var(--spotify-green);
+}
+
+.message.error {
+  background-color: rgba(255, 68, 68, 0.1);
+  color: #ff4444;
+  border: 1px solid #ff4444;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Footer */
