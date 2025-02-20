@@ -1,4 +1,3 @@
-// Datos de ejemplo para los posts destacados
 const featuredPosts = [
   {
     id: 1,
@@ -153,8 +152,6 @@ const featuredPosts = [
 
 ]
 
-// Datos de ejemplo para las reseñas
-// Actualizar los datos de ejemplo para las reseñas
 const latestReviews = [
   {
     id: 1,
@@ -393,7 +390,6 @@ const latestReviews = [
 
 ]
 
-// Actualizar los datos de ejemplo para las playlists
 const playlists = [
   {
     id: 1,
@@ -549,7 +545,6 @@ const playlists = [
   },
 ]
 
-// Función para renderizar los posts destacados
 function renderFeaturedPosts() {
   const container = document.getElementById("featured-posts")
   container.innerHTML = featuredPosts
@@ -565,7 +560,6 @@ function renderFeaturedPosts() {
     .join("")
 }
 
-// Función para renderizar las reseñas
 function renderLatestReviews() {
   const container = document.getElementById("latest-reviews")
   container.innerHTML = latestReviews
@@ -584,7 +578,6 @@ function renderLatestReviews() {
     .join("")
 }
 
-// Actualizar la función renderPlaylists para usar el id correcto
 function renderPlaylists() {
   const container = document.getElementById("playlists-content")
   container.innerHTML = playlists
@@ -603,13 +596,11 @@ function renderPlaylists() {
     .join("")
 }
 
-// Función para obtener el ID de la URL
 function getIdFromUrl() {
   const urlParams = new URLSearchParams(window.location.search)
   return urlParams.get("id")
 }
 
-// Función para renderizar el detalle de un post
 function renderPostDetail() {
   const container = document.getElementById("post-detail")
   if (!container) return
@@ -634,7 +625,6 @@ function renderPostDetail() {
     `
 }
 
-// Función para renderizar el detalle de una review
 function renderReviewDetail() {
   const container = document.getElementById("review-detail")
   if (!container) return
@@ -693,7 +683,6 @@ function renderReviewDetail() {
     `
 }
 
-// Actualizar la función renderPlaylistDetail
 function renderPlaylistDetail() {
   const container = document.getElementById("playlist-detail")
   if (!container) return
@@ -738,7 +727,6 @@ function renderPlaylistDetail() {
     `
 }
 
-// Función para manejar la navegación
 function handleNavigation() {
   const currentPage = window.location.pathname.split("/").pop()
 
@@ -753,14 +741,12 @@ function handleNavigation() {
       renderPlaylistDetail()
       break
     default:
-      // Si estamos en la página principal, renderizamos el contenido normal
       renderFeaturedPosts()
       renderLatestReviews()
       renderPlaylists()
   }
 }
 
-// Inicializar el contenido cuando se carga la página
 function validateEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   return re.test(email)
@@ -885,57 +871,9 @@ style.textContent = `
 `
 document.head.appendChild(style)
 
-// Actualizar el event listener del DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
   handleNavigation()
   handleContactForm()
-
-  // Funcionalidad del menú hamburguesa
-  const hamburger = document.querySelector(".hamburger")
-  const navMenu = document.querySelector(".nav-menu")
-
-  hamburger.addEventListener("click", mobileMenu)
-
-  function mobileMenu() {
-    hamburger.classList.toggle("active")
-    navMenu.classList.toggle("active")
-  }
-
-  // Cerrar el menú al hacer clic en un enlace
-  const navLink = document.querySelectorAll(".nav-menu a")
-
-  navLink.forEach((n) => n.addEventListener("click", closeMenu))
-
-  function closeMenu() {
-    hamburger.classList.remove("active")
-    navMenu.classList.remove("active")
-  }
-})
-
-// Función para manejar la navegación
-function handleNavigation() {
-  const currentPage = window.location.pathname.split("/").pop()
-
-  switch (currentPage) {
-    case "post-detail.html":
-      renderPostDetail()
-      break
-    case "review-detail.html":
-      renderReviewDetail()
-      break
-    case "playlist-detail.html":
-      renderPlaylistDetail()
-      break
-    default:
-      // Si estamos en la página principal, renderizamos el contenido normal
-      renderFeaturedPosts()
-      renderLatestReviews()
-      renderPlaylists()
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  handleNavigation()
 
   const hamburger = document.querySelector(".hamburger")
   const navMenu = document.querySelector(".nav-menu")
