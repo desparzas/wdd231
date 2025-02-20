@@ -84,6 +84,73 @@ const featuredPosts = [
       <p>While some fear that AI might replace human musicians, the reality is that it's becoming a powerful tool that enhances human creativity. As AI continues to develop, we can expect to see even more innovative applications in music production, potentially leading to new genres, production techniques, and ways of experiencing music.</p>
     `,
   },
+  {
+    id: 4,
+    title: "The Evolution of Vinyl Records",
+    excerpt: "Discover why vinyl records are making a strong comeback in the digital age.",
+    date: "March 10, 2024",
+    author: "Emily Johnson",
+    content: `
+      <p>Despite the rise of digital streaming, vinyl records have seen a remarkable resurgence in popularity. Music lovers are increasingly turning to vinyl for its warm sound, collectibility, and nostalgic appeal.</p>
+
+      <h2>1. Sound Quality and Analog Warmth</h2>
+      <p>Many audiophiles argue that vinyl provides a richer, warmer sound compared to digital formats, which often compress audio to save space.</p>
+
+      <h2>2. The Collectible Experience</h2>
+      <p>Owning a physical copy of an album, complete with album art and liner notes, offers a tangible experience that digital formats lack.</p>
+
+      <h2>3. A Growing Market</h2>
+      <p>Major and independent artists alike are embracing vinyl, leading to a diverse selection of records being pressed every year.</p>
+
+      <h2>Conclusion</h2>
+      <p>Vinyl records are here to stay, proving that sometimes, the old ways of enjoying music still have a place in the modern world.</p>
+    `,
+  },
+  {
+    id: 5,
+    title: "Music Festivals in 2024: What to Expect",
+    excerpt: "Get ready for an exciting year of live music with the top festivals around the world.",
+    date: "March 5, 2024",
+    author: "David Carter",
+    content: `
+      <p>As live music makes a full comeback, 2024 is set to be one of the biggest years for music festivals. From Coachella to Glastonbury, here’s what to expect.</p>
+
+      <h2>1. Bigger and Better Lineups</h2>
+      <p>Festival organizers are securing major headliners, blending legendary acts with rising stars.</p>
+
+      <h2>2. Enhanced Fan Experiences</h2>
+      <p>Expect more interactive stages, immersive art installations, and VIP experiences.</p>
+
+      <h2>3. Sustainability Initiatives</h2>
+      <p>Festivals are pushing for eco-friendly initiatives, including recycling programs and renewable energy sources.</p>
+
+      <h2>Conclusion</h2>
+      <p>If you're a fan of live music, 2024 is shaping up to be an unforgettable year for festivals worldwide.</p>
+    `,
+  },
+  {
+    id: 6,
+    title: "How Streaming Royalties Work for Artists",
+    excerpt: "A deep dive into how musicians get paid in the digital era.",
+    date: "February 25, 2024",
+    author: "Michael Reed",
+    content: `
+      <p>With streaming dominating the music industry, how do artists actually earn money from their streams? Let's break it down.</p>
+
+      <h2>1. The Revenue Breakdown</h2>
+      <p>Streaming platforms generate revenue through subscriptions and ads, but the payout per stream is often minimal.</p>
+
+      <h2>2. Major Label vs. Independent Earnings</h2>
+      <p>Signed artists often split earnings with labels, while independent artists keep a larger percentage.</p>
+
+      <h2>3. The Future of Streaming Royalties</h2>
+      <p>There’s an ongoing debate on how to make streaming fairer for artists, with new payment models being explored.</p>
+
+      <h2>Conclusion</h2>
+      <p>Understanding how streaming royalties work is crucial for artists navigating the digital music landscape.</p>
+    `,
+  },
+
 ]
 
 // Datos de ejemplo para las reseñas
@@ -211,6 +278,119 @@ const latestReviews = [
       { title: "Twilight Dreams", duration: "8:15", rating: "4.5/5" },
     ],
   },
+  {
+    id: 4,
+    album: "Celestial Horizons",
+    artist: "Lunar Echo",
+    rating: "4.7/5",
+    releaseDate: "February 10, 2024",
+    excerpt: "An immersive cosmic journey through ethereal synths and deep basslines.",
+    coverImage: "img/4.webp",
+    genre: "Electronic/Chillwave",
+    label: "Stellar Sounds",
+    content: `
+            <p>Lunar Echo returns with "Celestial Horizons," an album that transports listeners into a celestial dreamscape filled with lush synthesizers and hypnotic beats.</p>
+
+            <h2>Production & Sound</h2>
+            <p>The production is meticulous, with layered textures that create a sense of vastness. Tracks like "Galactic Drift" and "Stellar Winds" showcase a perfect balance of atmosphere and rhythm.</p>
+
+            <h2>Musical Composition</h2>
+            <p>The compositions feel both fluid and structured, offering an engaging blend of ambient and downtempo beats that make this a perfect late-night listen.</p>
+
+            <h2>Standout Tracks</h2>
+            <ul>
+                <li>"Galactic Drift" - A smooth opener that establishes the album's tone</li>
+                <li>"Stellar Winds" - A deep and mesmerizing sonic experience</li>
+                <li>"Nebula Glow" - The album’s most dynamic track</li>
+                <li>"Midnight Orbit" - A perfect closer with an emotional touch</li>
+            </ul>
+
+            <h2>Final Verdict</h2>
+            <p>With its rich textures and immersive soundscapes, "Celestial Horizons" is a must-listen for fans of chillwave and electronic ambient music.</p>
+        `,
+    trackList: [
+      { title: "Galactic Drift", duration: "5:21", rating: "4.5/5" },
+      { title: "Stellar Winds", duration: "6:08", rating: "5/5" },
+      { title: "Nebula Glow", duration: "4:45", rating: "4.5/5" },
+      { title: "Lunar Voyage", duration: "6:12", rating: "4.5/5" },
+      { title: "Midnight Orbit", duration: "7:03", rating: "4.7/5" },
+    ],
+  },
+  {
+    id: 5,
+    album: "Lost Frequencies",
+    artist: "Neon Specter",
+    rating: "4.3/5",
+    releaseDate: "February 14, 2024",
+    excerpt: "A dark yet captivating exploration of electronic and industrial sounds.",
+    coverImage: "img/5.webp",
+    genre: "Darkwave/Industrial",
+    label: "Shadow Beats",
+    content: `
+            <p>Neon Specter’s latest release, "Lost Frequencies," plunges into deep and brooding electronic soundscapes, blending darkwave aesthetics with industrial grit.</p>
+
+            <h2>Production & Sound</h2>
+            <p>With haunting synths and driving beats, the production is sharp and immersive, reminiscent of early darkwave pioneers but with a modern edge.</p>
+
+            <h2>Atmosphere & Mood</h2>
+            <p>The album maintains a tense, almost cinematic feel throughout. Tracks like "Ghost Circuit" and "Oblivion Pulse" exude an eerie energy that lingers.</p>
+
+            <h2>Standout Tracks</h2>
+            <ul>
+                <li>"Ghost Circuit" - A chilling opener with pulsating energy</li>
+                <li>"Neon Abyss" - A slow-burner with hypnotic layers</li>
+                <li>"Oblivion Pulse" - The most intense track on the album</li>
+                <li>"Distant Echoes" - A hauntingly beautiful closing piece</li>
+            </ul>
+
+            <h2>Final Verdict</h2>
+            <p>Not for the faint of heart, "Lost Frequencies" is a bold and intense experience for lovers of dark electronic music.</p>
+        `,
+    trackList: [
+      { title: "Ghost Circuit", duration: "5:05", rating: "4.5/5" },
+      { title: "Neon Abyss", duration: "6:32", rating: "4/5" },
+      { title: "Oblivion Pulse", duration: "5:59", rating: "4.5/5" },
+      { title: "Distant Echoes", duration: "7:14", rating: "4.3/5" },
+    ],
+  },
+  {
+    id: 6,
+    album: "Solar Waves",
+    artist: "Sunset Drive",
+    rating: "4.6/5",
+    releaseDate: "February 20, 2024",
+    excerpt: "A vibrant mix of retro-futuristic beats and warm, sunny vibes.",
+    coverImage: "img/6.webp",
+    genre: "Synthwave/Chillwave",
+    label: "Neon Groove Records",
+    content: `
+            <p>"Solar Waves" by Sunset Drive is a blissful ride through nostalgic synth melodies and breezy electronic landscapes.</p>
+
+            <h2>Production & Sound</h2>
+            <p>The production is smooth and warm, with bright synths and punchy percussion creating an uplifting atmosphere.</p>
+
+            <h2>Vibes & Energy</h2>
+            <p>The album evokes road trips down sun-soaked highways, with a perfect balance of laid-back grooves and energetic moments.</p>
+
+            <h2>Standout Tracks</h2>
+            <ul>
+                <li>"Golden Horizon" - A bright and euphoric opener</li>
+                <li>"Neon Skies" - A dreamy blend of retro and modern synths</li>
+                <li>"Sunset Drive" - The perfect track for a late-night cruise</li>
+                <li>"Crystal Shores" - A gentle, reflective closer</li>
+            </ul>
+
+            <h2>Final Verdict</h2>
+            <p>With its nostalgic charm and smooth production, "Solar Waves" is an essential listen for synthwave fans.</p>
+        `,
+    trackList: [
+      { title: "Golden Horizon", duration: "4:55", rating: "4.5/5" },
+      { title: "Neon Skies", duration: "5:23", rating: "4.7/5" },
+      { title: "Sunset Drive", duration: "5:49", rating: "4.6/5" },
+      { title: "Crystal Shores", duration: "6:10", rating: "4.5/5" },
+    ],
+  },
+
 ]
 
 // Actualizar los datos de ejemplo para las playlists
@@ -270,6 +450,101 @@ const playlists = [
       { title: "Floating Dreams", artist: "Cloud Surfers", duration: "3:55" },
       { title: "Gentle Rain", artist: "Weather Patterns", duration: "4:20" },
       { title: "Sunset Meditation", artist: "Soul Seekers", duration: "4:15" },
+    ],
+  },
+  {
+    id: 4,
+    title: "Rock Classics",
+    curator: "DJ Thunder",
+    tracks: "9 Tracks",
+    duration: "40 min",
+    description:
+      "Turn up the volume and enjoy timeless rock anthems that defined generations. From iconic guitar riffs to powerful vocals, this playlist is a tribute to rock legends.",
+    trackList: [
+      { title: "Highway Rebellion", artist: "The Road Kings", duration: "4:45" },
+      { title: "Echoes of Thunder", artist: "Stormriders", duration: "5:12" },
+      { title: "Electric Rush", artist: "The Wild Sparks", duration: "3:55" },
+      { title: "Rebel's Anthem", artist: "The Outlaws", duration: "4:30" },
+      { title: "Legends Never Fade", artist: "Old School Rockers", duration: "4:10" },
+      { title: "Neon Flames", artist: "Retro Sound", duration: "4:50" },
+      { title: "Riding the Storm", artist: "Thunderhawks", duration: "5:05" },
+      { title: "Midnight Riot", artist: "The Black Flames", duration: "3:45" },
+      { title: "Burning Heart", artist: "Steel Souls", duration: "4:25" },
+    ],
+  },
+  {
+    id: 5,
+    title: "Lo-Fi Study",
+    curator: "DJ Chillwave",
+    tracks: "8 Tracks",
+    duration: "35 min",
+    description:
+      "A smooth and mellow lo-fi playlist perfect for studying, working, or just vibing out. Let these calming beats help you focus and relax.",
+    trackList: [
+      { title: "Cloudy Thoughts", artist: "Lo-Fi Dreamers", duration: "3:40" },
+      { title: "Coffee Break", artist: "Jazzhop Collective", duration: "4:12" },
+      { title: "Rainy Afternoon", artist: "Mellow Vibes", duration: "4:05" },
+      { title: "Soft Echoes", artist: "Lo-Fi Scholars", duration: "3:50" },
+      { title: "Canvas & Colors", artist: "Beat Painter", duration: "4:15" },
+      { title: "Hazy Horizons", artist: "Night Owl Beats", duration: "4:00" },
+      { title: "Streetlights & Shadows", artist: "Urban Chill", duration: "3:55" },
+      { title: "Dream Journal", artist: "Midnight Reveries", duration: "4:20" },
+    ],
+  },
+  {
+    id: 6,
+    title: "Latin Rhythms",
+    curator: "DJ Caliente",
+    tracks: "10 Tracks",
+    duration: "45 min",
+    description:
+      "Feel the heat with these vibrant Latin beats! A mix of salsa, reggaeton, bachata, and cumbia to keep the party going all night long.",
+    trackList: [
+      { title: "Baila Conmigo", artist: "Los Sonidos", duration: "3:55" },
+      { title: "Sabor Tropical", artist: "Caliente Beats", duration: "4:10" },
+      { title: "Ritmo de la Noche", artist: "Fiesta Crew", duration: "4:25" },
+      { title: "Vente Pa'ca", artist: "La Nueva Ola", duration: "4:00" },
+      { title: "Salsa Picante", artist: "Los Rumberos", duration: "4:45" },
+      { title: "Luz de Luna", artist: "Bachata Stars", duration: "3:50" },
+      { title: "El Baile del Sol", artist: "Tropical Sound", duration: "4:30" },
+      { title: "Reggaetón Nights", artist: "Urban Flow", duration: "4:15" },
+      { title: "Cumbia en el Corazón", artist: "Los Festivos", duration: "4:05" },
+      { title: "Carnaval", artist: "Sabor Caribe", duration: "4:20" },
+    ],
+  },
+  {
+    id: 7,
+    title: "Hip-Hop Essentials",
+    curator: "DJ Hustle",
+    tracks: "7 Tracks",
+    duration: "30 min",
+    description:
+      "Get into the groove with some of the finest hip-hop tracks. A mix of old-school beats and modern flows to keep your head nodding.",
+    trackList: [
+      { title: "Street Poetry", artist: "The Lyricists", duration: "3:55" },
+      { title: "808 Dreams", artist: "Beats & Bars", duration: "4:10" },
+      { title: "City Lights", artist: "The Flow Masters", duration: "4:20" },
+      { title: "Golden Age", artist: "Retro Rhymes", duration: "3:50" },
+      { title: "Game Changer", artist: "New School Legends", duration: "4:15" },
+      { title: "Freestyle Universe", artist: "Mic Kings", duration: "4:05" },
+      { title: "Boom Bap Soul", artist: "Hip-Hop Revival", duration: "4:00" },
+    ],
+  },
+  {
+    id: 8,
+    title: "Acoustic Mornings",
+    curator: "DJ Harmony",
+    tracks: "6 Tracks",
+    duration: "28 min",
+    description:
+      "Start your day with soft and soothing acoustic tunes. Perfect for a calm morning coffee or a peaceful sunrise.",
+    trackList: [
+      { title: "Sunrise Serenade", artist: "The Acoustics", duration: "4:15" },
+      { title: "Golden Rays", artist: "Morning Strummers", duration: "4:00" },
+      { title: "Guitar Reflections", artist: "Serene Strings", duration: "4:10" },
+      { title: "Whispered Melodies", artist: "Soft Echo", duration: "3:55" },
+      { title: "Horizon View", artist: "The Wanderers", duration: "4:25" },
+      { title: "First Light", artist: "Gentle Chords", duration: "4:20" },
     ],
   },
 ]
