@@ -871,9 +871,54 @@ style.textContent = `
 `
 document.head.appendChild(style)
 
+const modal = document.getElementById("myModal") 
+
+function openModal() {
+  modal.classList.add("active")
+  document.body.style.overflow = "hidden"
+
+  const urlInput = document.querySelector(".url-input")
+  if (urlInput) {
+    urlInput.value = window.location.href
+  }
+}
+
+function initializeWelcomeModal() {
+  const welcomeModal = document.querySelector(".welcome-modal")
+  if (!welcomeModal) return
+
+  const closeButtons = welcomeModal.querySelectorAll(".modal-close, .modal-close-button")
+
+  function closeModal() {
+    welcomeModal.classList.remove("active")
+    document.body.style.overflow = ""
+  }
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closeModal)
+  })
+
+  welcomeModal.addEventListener("click", (e) => {
+    if (e.target === welcomeModal) {
+      closeModal()
+    }
+  })
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && welcomeModal.classList.contains("active")) {
+      closeModal()
+    }
+  })
+
+  document.body.style.overflow = "hidden"
+}
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   handleNavigation()
   handleContactForm()
+  initializeWelcomeModal()
 
   const hamburger = document.querySelector(".hamburger")
   const navMenu = document.querySelector(".nav-menu")
